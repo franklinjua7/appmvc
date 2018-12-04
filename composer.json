@@ -1,0 +1,7 @@
+{
+    "require": {
+        "dompdf/dompdf": "^0.8.2",
+        "nredbugs/emails": "^0.1.01",
+        "swiftmailer/swiftmailer": "^6.1"
+    }
+}
