@@ -1,17 +1,14 @@
 <?php 
 
-class Setting
-{
+class Setting {
+
 	private $pdo;
 
-	public function __construct()
-	{
+	public function __construct() {
 		try{
-			
 			$this->pdo = Database::StartUp();     
 
 		} catch(Exception $e) {
-			
 			die($e->getMessage());
 		}
 	}

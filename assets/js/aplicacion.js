@@ -23,7 +23,7 @@ jQuery(document).ready(function($) {
 			url:"../?c=Libro&a=BusquedaBootGrid",
 			formatters:{
 				"commands": function (column, row){
-					return "<div class=\"row\"><a class=\"btn btn-default btn-info\" href=\"../?c=Libro&a=VerLibro&id="+ row.id + "\"><i class=\"fa fa-eye\" aria-hidden=\"true\"></i>&nbsp;</a><a class=\"btn btn-default btn-danger\" href=\"../?c=Libro&a=EditarLibro&id="+ row.id + "\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i>&nbsp;</a><a class=\"btn btn-default btn-info\" href=\"../?c=Reporte&a=ReporteLibros&id="+ row.id + "\"><i class=\"fa fa-eye\" aria-hidden=\"true\"></i>&nbsp;</a></div>";
+					return "<div class=\"row\"><a class=\"btn btn-default btn-info\" href=\"../?c=Libro&a=VerLibro&id="+ row.id + "\"><i class=\"fa fa-eye\" aria-hidden=\"true\"></i>VER &nbsp;</a><a class=\"btn btn-default btn-danger\" href=\"../?c=Libro&a=Crud&id="+ row.id + "\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i>EDITAR &nbsp;</a><a class=\"btn btn-default btn-info\" href=\"../?c=Reporte&a=ReporteLibro&id="+ row.id + "\"><i class=\"fa fa-eye\" aria-hidden=\"true\"></i>PDF &nbsp;</a></div>";
 				},
 
 				"Foto": function (column, row){

@@ -36,10 +36,19 @@ class LibroController{
 	}
 
 	public function Crud(){
+
 		if (isset($_REQUEST['id'])) {
 			# Si tenemos o no un ID de un LIBRO
-			$this->model_autor->Obtener($_REQUEST['id']);
-		}
+			$estados = $this->model_estado->Listar();
+			$generos = $this->model_genero->Listar();
+			$editoriales = $this->model_editorial->Listar();
+			$autores = $this->model_autor->Listar();
+
+			$data = $this->model->Obtener($_REQUEST['id']);
+			$libro_autor = $this->model_libro_autor->Obtener($_REQUEST['id']);
+			$autorlibro = $this->model_autor->Obtener($libro_autor->autor_id);
+			
+		};
 
 		require_once 'view/inicio/inicio2.php';
 		require_once 'view/libro/registrarlibro.php';
@@ -47,6 +56,8 @@ class LibroController{
 	}
 
 	public function RegistrarLibro(){
+
+		$data = new Libro();
 
 		$estados = $this->model_estado->Listar();
 		$generos = $this->model_genero->Listar();

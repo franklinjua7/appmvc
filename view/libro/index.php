@@ -6,6 +6,7 @@
 			</strong>
 		</h3>
 		<a class="btn btn-primary" href="..\?c=Libro&a=RegistrarLibro">Registrar Libro</a>
+		<a class="btn btn-success" href="..\?c=Libro&a=ReporteLibros">Generar PDF</a>
 		<div class="table-responsive" id="lista-libro">
 			<table class="table table-hover" id="tbl-libro">
 				<thead>

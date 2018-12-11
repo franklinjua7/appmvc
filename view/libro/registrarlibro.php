@@ -10,14 +10,14 @@
            <div class="row form-group">
                <div class="col-xs-12 col-sm-6">
                    <label for="nombre_libro">Título del Libro</label>
-                   <input type="text" id="nombre_libro" name="nombre_libro" required class="form-control text-center" placeholder="Nombre del Libro">
+                   <input type="text" id="nombre_libro" name="nombre_libro" required class="form-control text-center" placeholder="Nombre del Libro" value="<?php echo $data->id != null ? $data->nombre_libro : ''; ?>">
                    <span id="ErrorMensaje-nombre_libro" class="help-block"></span>
                </div>
                <div class="col-xs-12 col-sm-6">
                    <label for="editorial_id">Editorial</label>
                    <select name="editorial_id" id="editorial_id" class="form-control">
                     <?php foreach ($editoriales as $editorial) :?>
-                      <option value= <?php echo $editorial->id; ?>><?php echo $editorial->nombre_editorial; ?> </option>
+                      <option <?php echo $data->editorial_id == $editorial->id ? 'selected' : '';?> value= <?php echo $editorial->id; ?>><?php echo $editorial->nombre_editorial; ?> </option>
                     <?php endforeach; ?>
                     </select>
                </div>
@@ -27,7 +27,7 @@
                    <label for="estado_id">Estado</label>
                    <select name="estado_id" id="estado_id" class="form-control">
                     <?php foreach ($estados as $estado): ?>
-                      <option value= <?php echo $estado->id; ?>><?php echo $estado->nombre_estado; ?></option>
+                      <option <?php echo $data->estado_id == $estado->id ? 'selected' : '';?> value= <?php echo $estado->id; ?>><?php echo $estado->nombre_estado; ?></option>
                     <?php endforeach; ?>
                     </select>
             </div>
@@ -36,7 +36,7 @@
                    <label for="genero_id">Genero</label>
                    <select name="genero_id" id="genero_id" class="form-control">
                       <?php foreach ($generos as $genero): ?>
-                      <option value= <?php echo $genero->id; ?>><?php echo $genero->nombre_genero; ?></option>
+                      <option <?php echo $data->genero_id == $genero->id ? 'selected' : '';?> value= <?php echo $genero->id; ?>><?php echo $genero->nombre_genero; ?></option>
                     <?php endforeach; ?>
                     </select>
                </div>
@@ -46,22 +46,22 @@
            <div class="row">
                <div class="col-xs-12 col-sm-3">
                    <label for="numero_paginas"># de páginas</label>
-                   <input type="number" id="numero_paginas" class="form-control text-center" name="numero_paginas" value="1">
+                   <input type="number" id="numero_paginas" class="form-control text-center" name="numero_paginas" value="<?php echo $data->id != null ? $data->numero_paginas : '1'; ?>">
                    <span id="ErrorMensaje-numero_paginas" class="help-block"></span>
                </div>
                <div class="col-xs-12 col-sm-3">
                    <label for="anio_edicion">Año de Edición</label>
-                   <input type="number" id="anio_edicion" class="form-control text-center" name="anio_edicion" value="1980">
+                   <input type="number" id="anio_edicion" class="form-control text-center" name="anio_edicion" value="<?php echo $data->id != null ? $data->anio_edicion : '1980'; ?>">
                    <span id="ErrorMensaje-anio-edicion" class="help-block"></span>
                </div>
                <div class="col-xs-12 col-sm-3">
                    <label for="FechaPublicacion">Fecha Publicación</label>
-                   <input type="date" id="FechaPublicacion" class="form-control text-center" name="FechaPublicacion">
+                   <input type="date" id="FechaPublicacion" class="form-control text-center" name="FechaPublicacion" value="<?php echo $data->id != null ? $data->FechaPublicacion : ''; ?>">
                    <span id="ErrorMensaje-FechaPublicacion" class="help-block"></span>
                </div>
                <div class="col-xs-12 col-sm-3">
                    <label for="numero_paginas">ISBN</label>
-                   <input type="text" id="codigo_isbn" class="form-control text-center" name="codigo_isbn" value="" placeholder="codigo isbn">
+                   <input type="text" id="codigo_isbn" class="form-control text-center" name="codigo_isbn" value="<?php echo $data->id != null ? $data->codigo_isbn : ''; ?>" placeholder="codigo isbn">
                    <span id="ErrorMensaje-codigo_isbn" class="help-block"></span>
                </div>
            </div>
@@ -69,7 +69,7 @@
            <div class="row">
                <div class="col-xs-12">
                    <label for="resumen">Resumen</label>
-                   <textarea type="resumen" id="resumen" name="resumen" class="form-control" rows="10" required></textarea>
+                   <textarea type="resumen" id="resumen" name="resumen" class="form-control" rows="10" required><?php echo $data->id != null ? $data->resumen : ''; ?></textarea>
                    <span id="ErrorMensaje-resumen" class="help-block"></span>
                </div>
            </div>
@@ -122,4 +122,8 @@
            </div>
           </div>
         </form>
+
+<script>
+  
+</script>
             
